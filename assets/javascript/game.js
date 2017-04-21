@@ -38,7 +38,7 @@
         } else {
         	guessesLeft--;
         	guessesSoFar.push(userGuess);
-        	alert("That's the wrong letter");
+        	alert("That's the wrong letter. Keep trying!");
         	if (guessesLeft === 0) {
 	            alert("You lost! Thankfully you have plenty of time till the next Olympics!");
 	            guessesLeft = 10;

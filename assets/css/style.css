@@ -11,6 +11,8 @@ body {
 @font-face {
 	font-family: "SF Sports Night";
 	src: url("../images/fonts/SFSportsNight.ttf") format("truetype");
+	font-family: "SF Sports Night NS";
+	src: url("../images/fonts/SFSportsNightNS.ttf") format("truetype");
 }
 
 h1 {
@@ -33,7 +35,7 @@ p {
 
 #countersContainer {
 	width: 60%;
-	height: 500px;
+	height: 450px;
 	margin: 0 auto;
 	border: 1px dotted #009f3d;
 	border-radius: 10px;
@@ -42,17 +44,18 @@ p {
 	background-image: url("../images/sports.png");
 	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 	box-sizing: border-box;
+	font-family: "SF Sports Night", Arial;
 }
 
 h2 {
-	font-family: "SF Sports Night", Arial;
+	font-family: "SF Sports Night NS", Arial;
 	text-align: center;
 	font-size: 40px;
 	color: #f4c300;
 }
 
 .longText {
-	font-size: 30px;
+	font-size: 26px;
 	color: #009f3d;
 }
 
