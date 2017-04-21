@@ -28,7 +28,7 @@ p {
 }
 
 #current {
-	color: #f4c300;
+	color: #009f3d;
 }
 
 #countersContainer {
@@ -48,6 +48,11 @@ h2 {
 	font-family: "SF Sports Night", Arial;
 	text-align: center;
 	font-size: 40px;
+	color: #f4c300;
+}
+
+.longText {
+	font-size: 30px;
 	color: #009f3d;
 }
 

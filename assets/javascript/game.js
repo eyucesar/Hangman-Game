@@ -32,7 +32,7 @@
         console.log(currentWord.indexOf(userGuess));
         
         if (currentWord.indexOf(userGuess) > -1) {
-        	alert("You guessed a letter!");
+        	alert("You guessed a letter. Almost there!");
         	//I need to replace the guesses letter with the underscores... wordUnderscore = 
         	//I need to add a statement that will increase the wins once the word is guessed. 
         } else {
@@ -40,7 +40,7 @@
         	guessesSoFar.push(userGuess);
         	alert("That's the wrong letter");
         	if (guessesLeft === 0) {
-	            alert("You lost! Seems like you are not a very good psychic after all :)");
+	            alert("You lost! Thankfully you have plenty of time till the next Olympics!");
 	            guessesLeft = 10;
 	            //here I empty the elements inside the array to start the game again.
 	            guessesSoFar = [];
