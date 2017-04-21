@@ -13,13 +13,7 @@
 	//Here I replace the chaarcters in the current word with underscores to hide the word.
 	var wordUnderscore = currentWord.replace(/[A-Z]/g, "_ ");
 	console.log(wordUnderscore);
-	//here I loop through the word to change the characters to underscores.
-	/*for (i = 0; i < currentWord.length; i++) {
-			currentWord.charAt(i) = "_";
-			console.log(currentWord);
-		}
-	//var currentWordUnd = currentWord.replace("_");*/
-	//writing the current word to the screen before the user starts playing the game. I need to find a way to hide the characters with underscores.
+	//I am writing the word to the screen after hiding the letters with underscores.
 	document.getElementById("currentWord").innerHTML = wordUnderscore;
 	//here my functions starts when the user releases the keys
 	document.onkeyup = function(event) {
@@ -32,26 +26,29 @@
         console.log(currentWord.indexOf(userGuess));
         
         if (currentWord.indexOf(userGuess) > -1) {
+        	new Audio('http://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/JUBEL.WAV').play()
         	alert("You guessed a letter. Almost there!");
-        	//I need to replace the guesses letter with the underscores... wordUnderscore = 
+        	//I need to replace the guesses letter with the underscores...         	
         	//I need to add a statement that will increase the wins once the word is guessed. 
+        	//And I need add a statement which will display an image on the screen if the user guesses the word.
         } else {
         	guessesLeft--;
         	guessesSoFar.push(userGuess);
-        	alert("That's the wrong letter. Keep trying!");
+        	new Audio('http://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/Boo.wav').play()
+        	alert("This letter is not found in the word. Keep trying!");
         	if (guessesLeft === 0) {
-	            alert("You lost! Thankfully you have plenty of time till the next Olympics!");
+	            alert("You lost. Thankfully you have plenty of time to study before the next Olympics!");
 	            guessesLeft = 10;
 	            //here I empty the elements inside the array to start the game again.
 	            guessesSoFar = [];
 	            //after the execution of each if statement, computer picks another letter randomly.
 	            currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	           }
+	        }
         }
 
         guessesVar = document.getElementById("theGuesses");
         guessesVar.innerHTML = guessesSoFar;
         document.getElementById("guessesLeft").innerHTML = guessesLeft;
-
+        document.getElementById("wins").innerHTML = wins;
 
     };
