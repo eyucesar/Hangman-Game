@@ -33,29 +33,53 @@ p {
 	color: #009f3d;
 }
 
-#countersContainer {
-	width: 60%;
-	height: 450px;
+#mainContainer {
+	width: 100%;
+	height: auto;
+	margin-bottom: 100px;
+}
+
+#middleContainer {
+	width: 90%;
+	height: auto;
 	margin: 0 auto;
-	border: 1px dotted #009f3d;
+}
+
+#displayImages {
+	width: 38%;
+	height: auto;
+	float: left;
+	border-radius: 15px;
+}
+
+#openingImg {
+	width: 100%;
+	height: auto;
+}
+
+#counters {
+	width: 60%;
+	height: auto;
+	border: 1px dashed #009f3d;
 	border-radius: 10px;
 	padding: 10px;
-	background-color: #f9e69a;
 	background-image: url("../images/sports.png");
 	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 	box-sizing: border-box;
 	font-family: "SF Sports Night", Arial;
+	float: right;
 }
 
 h2 {
 	font-family: "SF Sports Night NS", Arial;
 	text-align: center;
-	font-size: 40px;
+	font-size: 34px;
 	color: #f4c300;
+	clear: both;
 }
 
 .longText {
-	font-size: 26px;
+	font-size: 22px;
 	color: #009f3d;
 }
 

@@ -1,5 +1,5 @@
 	//an array for computer's choices.
-	var computerChoices = ["CURLING", "ARCHERY", "PENTATHLON", "TRAMPOLINE", "BOBSLEIGH", "BADMINTON", "FENCING", "TAEKWONDO", "SPEED SKATING", "BEACH VOLLEYBALL"];
+	var computerChoices = ["CURLING", "ARCHERY", "PENTATHLON", "TRAMPOLINE", "BOBSLEIGH", "BADMINTON", "FENCING", "TAEKWONDO", "SNOWBOARD", "SKELETON", "LUGE", "WEIGHTLIFTING"];
 	//this is where I will track the wins
 	var wins = 0;
 	//variable that tracks the guess left. I start the game with 10 guesses.
@@ -19,7 +19,6 @@
 	document.onkeyup = function(event) {
         //user presses a key and I convert into a lower case letter and assing the value to userGuess variable.
     	var userGuess = event.key.toUpperCase();
-
         //testing the values of variables to see whether my code works so far
         console.log("computer guess: " + currentWord);
         console.log("user guess: " + userGuess);
@@ -28,7 +27,10 @@
         if (currentWord.indexOf(userGuess) > -1) {
         	new Audio('http://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/JUBEL.WAV').play()
         	alert("You guessed a letter. Almost there!");
-        	//I need to replace the guesses letter with the underscores...         	
+        	//I need to replace the guesses letter with the underscores...
+        		for (var i = 0; i < currentWord.length; i++ ) {
+        			currentWord[i] = wordUnderscore[i];
+        		}         	
         	//I need to add a statement that will increase the wins once the word is guessed. 
         	//And I need add a statement which will display an image on the screen if the user guesses the word.
         } else {
