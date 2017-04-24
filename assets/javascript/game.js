@@ -7,17 +7,18 @@
 	//variable to hold the guessed letters. I start it empty, bc the user didn't press any keys yet.
 	var guessesSoFar = [];
 	var guessesVar;
-	var wordUnderscore = "";
+	var wordHidden = "";
+    var indexNum;
 	//variable to hold the word the computer picks
 	var currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 	//Here I replace the chaarcters in the current word with underscores to hide the word.
-	var wordUnderscore = currentWord.replace(/[A-Z]/g, "_ ");
-	console.log(wordUnderscore);
+	var wordHidden = currentWord.replace(/[A-Z]/g, "_ ");
+	console.log(wordHidden);
 	//I am writing the word to the screen after hiding the letters with underscores.
-	document.getElementById("currentWord").innerHTML = wordUnderscore;
+	document.getElementById("currentWord").innerHTML = wordHidden;
 	//here my functions starts when the user releases the keys
 	document.onkeyup = function(event) {
-        //user presses a key and I convert into a lower case letter and assing the value to userGuess variable.
+        //user presses a key and I convert into an upper case letter and assign the value to userGuess variable.
     	var userGuess = event.key.toUpperCase();
         //testing the values of variables to see whether my code works so far
         console.log("computer guess: " + currentWord);
@@ -25,19 +26,29 @@
         console.log(currentWord.indexOf(userGuess));
         
         if (currentWord.indexOf(userGuess) > -1) {
-        	new Audio('http://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/JUBEL.WAV').play()
-        	alert("You guessed a letter. Almost there!");
-        	//I need to replace the guesses letter with the underscores...
-        		for (var i = 0; i < currentWord.length; i++ ) {
-        			currentWord[i] = wordUnderscore[i];
-        		}         	
+        	//new Audio('https://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/JUBEL.WAV').play()
+            alert("You guessed a letter. Almost there!");
+            // var wordHidden = wordHidden.replace(/"_ "/g, userGuess);
+            // document.getElementById("currentWord").innerHTML = wordHidden;
+            //     if (wordHidden.indexOf("_ ") < -1) {
+            //         alert("Yay, you wond a gold medal!");
+            //         wins++;
+            //         guessesLeft = 10;
+            //         guessesSoFar = [];
+            //         currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            //         wordHidden = wordHidden.replace("_ ", userGuess);
+            //         document.getElementById("currentWord").innerHTML = wordHidden;
+                }
+            
+        	//I need to replace the guesses letter with the underscores..
         	//I need to add a statement that will increase the wins once the word is guessed. 
         	//And I need add a statement which will display an image on the screen if the user guesses the word.
         } else {
         	guessesLeft--;
         	guessesSoFar.push(userGuess);
-        	new Audio('http://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/Boo.wav').play()
+        	//new Audio('https://www.websites-graphics1.de/songs/wavs/1wav_geraeuche/Boo.wav').play()
         	alert("This letter is not found in the word. Keep trying!");
+
         	if (guessesLeft === 0) {
 	            alert("You lost. Thankfully you have plenty of time to study before the next Olympics!");
 	            guessesLeft = 10;
