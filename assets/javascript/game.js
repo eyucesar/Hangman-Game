@@ -76,11 +76,11 @@
                         if (currentWord === "WEIGHTLIFTING") {
                             document.getElementById("openingImg").src = "assets/images/weightlifting.jpg";
                         }
-                    document.getElementById("currentWord").innerHTML = currentWord;
+                    //document.getElementById("currentWord").innerHTML = currentWord;
                     //console.log(currentWord);
-                    wins++;
-                    guessesLeft = 10;
                     guessesSoFar = [];
+                    guessesLeft = 10;
+                    wins++;
                     currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
                     wordHidden = currentWord.split("").map(function(){return "_"});
                     document.getElementById("currentWord").innerHTML = wordHidden;

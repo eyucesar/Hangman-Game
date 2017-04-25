@@ -87,3 +87,10 @@ h2 {
 #wins, #currentWord, #guessesLeft, #theGuesses {
 	color: black;
 }
+
+#copyright {
+	width: 100%;
+	font-size: 12px;
+	font-family: Arial;
+	text-align: center;
+}
