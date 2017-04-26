@@ -11,7 +11,7 @@
     //variable to hold the guessed letters. I start it empty, bc the user didn't press any keys yet.
     var guessesSoFar = [];
     //variable to hold the word the computer picks
-    //var wordHidden = [];
+    var guessedLetters = [];
     var currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     //Here I replace the chaarcters in the current word with underscores to hide the word.
     var wordHidden = currentWord.split("").map(function(){return "_"});
@@ -36,55 +36,53 @@
             indexNum = currentWord.indexOf(userGuess, indexNum + 1);
             document.getElementById("currentWord").innerHTML = wordHidden;
             //console.log(wordHidden);
-                    if (wordHidden.indexOf("_") === -1) {
-                    wordHidden[indexNum] = userGuess;
-                    alert("Yay, you won a gold medal!");
-                        //here I will try to dynamically change the image div once the user guesses the letter correctly. 
-                        if (currentWord === "ARCHERY") {
-                            document.getElementById("openingImg").src = "assets/images/archery.jpg";
-                        }
-                        if (currentWord === "CURLING") {
-                            document.getElementById("openingImg").src = "assets/images/curling.jpg";
-                        }
-                        if (currentWord === "PENTATHLON") {
-                            document.getElementById("openingImg").src = "assets/images/pentathlon.jpg";
-                        }
-                        if (currentWord === "TRAMPOLINE") {
-                            document.getElementById("openingImg").src = "assets/images/trampoline.jpg";
-                        }
-                        if (currentWord === "BOBSLEIGH") {
-                            document.getElementById("openingImg").src = "assets/images/bobsleigh.jpg";
-                        }
-                        if (currentWord === "BADMINTON") {
-                            document.getElementById("openingImg").src = "assets/images/badminton.jpg";
-                        }
-                        if (currentWord === "FENCING") {
-                            document.getElementById("openingImg").src = "assets/images/fencing.jpg";
-                        }
-                        if (currentWord === "TAEKWONDO") {
-                            document.getElementById("openingImg").src = "assets/images/taekwondo.jpg";
-                        }
-                        if (currentWord === "SNOWBOARD") {
-                            document.getElementById("openingImg").src = "assets/images/snowboard.jpg";
-                        }
-                        if (currentWord === "SKELETON") {
-                            document.getElementById("openingImg").src = "assets/images/skeleton.jpg";
-                        }
-                        if (currentWord === "LUGE") {
-                            document.getElementById("openingImg").src = "assets/images/luge.jpg";
-                        }
-                        if (currentWord === "WEIGHTLIFTING") {
-                            document.getElementById("openingImg").src = "assets/images/weightlifting.jpg";
-                        }
-                    //document.getElementById("currentWord").innerHTML = currentWord;
-                    //console.log(currentWord);
-                    guessesSoFar = [];
-                    guessesLeft = 10;
-                    wins++;
-                    currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-                    wordHidden = currentWord.split("").map(function(){return "_"});
-                    document.getElementById("currentWord").innerHTML = wordHidden;
+            if (wordHidden.indexOf("_") === -1) {
+                wordHidden[indexNum] = userGuess;
+                alert("Yay, you won a gold medal!");
+                //here I will try to dynamically change the image div once the user guesses the letter correctly. 
+                if (currentWord === "ARCHERY") {
+                    document.getElementById("openingImg").src = "assets/images/archery.jpg";
                 }
+                if (currentWord === "CURLING") {
+                    document.getElementById("openingImg").src = "assets/images/curling.jpg";
+                }
+                if (currentWord === "PENTATHLON") {
+                    document.getElementById("openingImg").src = "assets/images/pentathlon.jpg";
+                }
+                if (currentWord === "TRAMPOLINE") {
+                    document.getElementById("openingImg").src = "assets/images/trampoline.jpg";
+                }
+                if (currentWord === "BOBSLEIGH") {
+                    document.getElementById("openingImg").src = "assets/images/bobsleigh.jpg";
+                }
+                if (currentWord === "BADMINTON") {
+                    document.getElementById("openingImg").src = "assets/images/badminton.jpg";
+                }
+                if (currentWord === "FENCING") {
+                    document.getElementById("openingImg").src = "assets/images/fencing.jpg";
+                }
+                if (currentWord === "TAEKWONDO") {
+                    document.getElementById("openingImg").src = "assets/images/taekwondo.jpg";
+                }
+                if (currentWord === "SNOWBOARD") {
+                    document.getElementById("openingImg").src = "assets/images/snowboard.jpg";
+                }
+                if (currentWord === "SKELETON") {
+                    document.getElementById("openingImg").src = "assets/images/skeleton.jpg";
+                }
+                if (currentWord === "LUGE") {
+                    document.getElementById("openingImg").src = "assets/images/luge.jpg";
+                }
+                if (currentWord === "WEIGHTLIFTING") {
+                    document.getElementById("openingImg").src = "assets/images/weightlifting.jpg";
+                }
+                guessesSoFar = [];
+                guessesLeft = 10;
+                wins++;
+                currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+                wordHidden = currentWord.split("").map(function(){return "_"});
+                document.getElementById("currentWord").innerHTML = wordHidden;
+            }
         } if (currentWord.indexOf(userGuess) === -1) {
             guessesLeft--;
             guessesSoFar.push(userGuess);
@@ -101,7 +99,8 @@
                 wordHidden = currentWord.split("").map(function(){return "_"});
                 document.getElementById("currentWord").innerHTML = wordHidden;
             }
-        } 
+
+        }
 
         document.getElementById("theGuesses").innerHTML = guessesSoFar;
         document.getElementById("guessesLeft").innerHTML = guessesLeft;
