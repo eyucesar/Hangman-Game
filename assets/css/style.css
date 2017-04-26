@@ -9,21 +9,21 @@ body {
 }
 
 @font-face {
-	font-family: "SF Sports Night";
+	font-family: "SF Sports Night", Arial;
 	src: url("../images/fonts/SFSportsNight.ttf") format("truetype");
 	font-family: "SF Sports Night NS";
 	src: url("../images/fonts/SFSportsNightNS.ttf") format("truetype");
 }
 
 h1 {
-	font-family: "SF Sports Night", Arial;
+	font-family: "SF Sports Night NS", Arial;
 	font-size: 150px;
 	text-align: center;
 	color: #df0024;
 }
 
 p {
-	font-family: "SF Sports Night", Arial;
+	font-family: "SF Sports Night NS", Arial;
 	font-size: 50px;
 	text-align: center;
 	color: #0d6996;
@@ -67,7 +67,7 @@ p {
 	background-image: url("../images/sports.png");
 	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 	box-sizing: border-box;
-	font-family: "SF Sports Night", Arial;
+	font-family: "SF Sports Night NS", Arial;
 	float: right;
 }
 
@@ -90,7 +90,7 @@ h2 {
 
 #copyright {
 	width: 100%;
-	font-size: 12px;
+	font-size: 10px;
 	font-family: Arial;
 	text-align: center;
 }
