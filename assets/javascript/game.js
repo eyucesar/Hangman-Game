@@ -29,8 +29,10 @@ document.onkeyup = function(event) {
     var indexNum = currentWord.indexOf(userGuess, indexNum + 1);
 
     if (currentWord.indexOf(userGuess) === -1) {
-        guessesLeft--;
-        guessesSoFar.push(userGuess);
+        if (guessesSoFar.indexOf(userGuess) === -1) {
+            guessesSoFar.push(userGuess);
+            guessesLeft--;
+        }
         new Audio('http://psychic3d.free.fr/extra_fichiers/sons/foule_contente.wav').play()
         //alert("This letter is not found in the word. Keep trying!");
         if (guessesLeft === 0) {
