@@ -1,7 +1,5 @@
 //an array for computer's choices.
 var computerChoices = ["CURLING", "ARCHERY", "PENTATHLON", "TRAMPOLINE", "BOBSLEIGH", "BADMINTON", "FENCING", "TAEKWONDO", "SNOWBOARD", "SKELETON", "LUGE", "WEIGHTLIFTING"];
-//testing
-//var computerChoices = ["CURLING", "ARCHERY", "PENTATHLON"];
 //variable to hold the user guess.
 var userGuess;
 //this is where I will track the wins
@@ -10,12 +8,13 @@ var wins = 0;
 var guessesLeft = 10;
 //variable to hold the guessed letters. I start it empty, bc the user didn't press any keys yet.
 var guessesSoFar = [];
-//variable to hold the word the computer picks
-//var wordHidden = [];
+//randomly picking a word from the computer choices array
 var currentWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-//Here I replace the chaarcters in the current word with underscores to hide the word.
+//Here I replace the characters in the current word with underscores to hide the word.
 var wordHidden = currentWord.split("").map(function(){return "_"});
-//console.log(wordHidden);
+//trying to replace the commas with spaces
+//var wordHiddenJoin = wordHidden.join(' ');
+console.log(wordHidden);
 //I am writing the word to the screen after hiding the letters with underscores.
 document.getElementById("currentWord").innerHTML = wordHidden;
 //here my functions starts when the user releases the keys

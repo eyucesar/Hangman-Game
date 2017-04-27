@@ -94,3 +94,37 @@ h2 {
 	font-family: Arial;
 	text-align: center;
 }
+
+/*media queries for responsiveness*/
+@media screen and (max-width: 980px) {
+    body {
+        width: 100%;
+    }
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+
+    #displayImages {
+    	visibility: hidden;
+    }
+
+    #counters {
+		width: 95%;
+	}
+
+	#copyright {
+		width: 100%;
+		text-align: left;
+		margin-top: 20px;
+	}
+
+@media screen and (max-width: 640px) {
+    body {
+        width: 100%;
+    }
+
+	h1 {
+		font-size: 100px;
+	}
