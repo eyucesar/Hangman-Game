@@ -1,8 +1,8 @@
 //an array for computer's choices.
-var computerChoices = ["CURLING", "ARCHERY", "PENTATHLON", "TRAMPOLINE", "BOBSLEIGH", "BADMINTON", "FENCING", "TAEKWONDO", "SNOWBOARD", "SKELETON", "LUGE", "WEIGHTLIFTING"];
+var computerChoices = ["CURLING", "ARCHERY", "PENTATHLON", "TRAMPOLINE", "BOBSLEIGH", "BADMINTON", "FENCING", "TAEKWONDO", "SNOWBOARD", "SKELETON", "LUGE", "WEIGHTLIFTING", "EQUESTRIAN", "HOCKEY", "TRIATHLON", "WRESTLING", "BIATLON", "RUGBY", "HANDBALL", "JUDO", "DIVING"];
 //variable to hold the user guess.
 var userGuess;
-//this is where I will track the wins
+//this is where I will track the wins/gold medals.
 var wins = 0;
 //variable that tracks the guess left. I start the game with 10 guesses.
 var guessesLeft = 10;
@@ -17,7 +17,7 @@ var wordHidden = currentWord.split("").map(function(){return "_"});
 console.log(wordHidden);
 //I am writing the word to the screen after hiding the letters with underscores.
 document.getElementById("currentWord").innerHTML = wordHidden;
-//here my functions starts when the user releases the keys
+//here my function starts when the user releases the keys
 document.onkeyup = function(event) {
     //user presses a key and I convert into a lower case letter and assing the value to userGuess variable.
     var userGuess = event.key.toUpperCase();
@@ -58,7 +58,7 @@ document.onkeyup = function(event) {
         if (wordHidden.indexOf("_") === -1) {
             wordHidden[indexNum] = userGuess;
             alert("Yay, you won a gold medal!");
-            //here I will try to dynamically change the image div once the user guesses the letter correctly. 
+            //here I dynamically change the image div once the user guesses the letter correctly. 
             if (currentWord === "ARCHERY") {
                 document.getElementById("openingImg").src = "assets/images/archery.jpg";
             }
@@ -95,6 +95,33 @@ document.onkeyup = function(event) {
             if (currentWord === "WEIGHTLIFTING") {
                 document.getElementById("openingImg").src = "assets/images/weightlifting.jpg";
             }
+             if (currentWord === "EQUESTRIAN") {
+                document.getElementById("openingImg").src = "assets/images/equestrian.jpg";
+            }
+             if (currentWord === "HOCKEY") {
+                document.getElementById("openingImg").src = "assets/images/hockey.jpg";
+            }
+             if (currentWord === "TRIATHLON") {
+                document.getElementById("openingImg").src = "assets/images/triathlon.jpg";
+            }
+             if (currentWord === "WRESTLING") {
+                document.getElementById("openingImg").src = "assets/images/wrestling.jpg";
+            }
+             if (currentWord === "BIATLON") {
+                document.getElementById("openingImg").src = "assets/images/biathlon.jpg";
+            }
+             if (currentWord === "RUGBY") {
+                document.getElementById("openingImg").src = "assets/images/rugby.jpg";
+            }
+             if (currentWord === "HANDBALL") {
+                document.getElementById("openingImg").src = "assets/images/handball.jpg";
+            }
+             if (currentWord === "JUDO") {
+                document.getElementById("openingImg").src = "assets/images/judo.jpg";
+            }
+             if (currentWord === "DIVING") {
+                document.getElementById("openingImg").src = "assets/images/diving.jpg";
+            }
             guessesSoFar = [];
             guessesLeft = 10;
             wins++;
@@ -103,7 +130,8 @@ document.onkeyup = function(event) {
             document.getElementById("currentWord").innerHTML = wordHidden;
         }
     }
-    
+
+    //finally I write the wins, the guesses counter and the guessed letters to the screen.
     document.getElementById("theGuesses").innerHTML = guessesSoFar;
     document.getElementById("guessesLeft").innerHTML = guessesLeft;
     document.getElementById("wins").innerHTML = wins;
